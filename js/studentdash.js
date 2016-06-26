@@ -42,11 +42,12 @@ angular.module("dashboard", []).controller('ctrl', function($scope) {
       snapshot.forEach(function(x) {
         $scope.opportunities.push(x.val());
       });
+      });
     });
   }
 
   $scope.email = function(x) {
-    window.open('mailto:' + x.email + '?subject='+ x.projName +'&body=Dear Professor ' + x.prof + ',/n My name is ' + $scope.name + '. I saw that you were looking for interns for your ' + x.projName + ' project. I am very interested in ' + x.dept + ' and would greatly appreciate an opportunity to work with you. I have a ' + $scope.gpa + 'GPA, and am very qualified for the job. /n From,/n' + $scope.name);
+    window.open('mailto:' + x.email + '?subject='+ x.projName +'&body=Dear Professor ' + x.prof + ',\n My name is ' + $scope.name + '. I saw that you were looking for interns for your ' + x.projName + ' project. I am very interested in ' + x.dept + ' and would greatly appreciate an opportunity to work with you. I have a ' + $scope.gpa + 'GPA, and am very qualified for the job. \n From,\n' + $scope.name);
   }
 
 });
