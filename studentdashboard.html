@@ -30,8 +30,21 @@
   <div class="row">
     <div class="col s12 m8 l8 offset-m2 offset-l2">
       <h1>Dashboard</h1>
-      <br></br>
-      <div class="x in opportunities">
+      <br>
+      <a href="#" class="button" ng-click="compile()">compile internships</a>
+      <div ng-repeat="x in opportunities" class="card" ng-click="email(x)">
+        <h4>{{x.projName}}</h4>
+        <p>
+          {{x.prof}}, {{x.dept}} {{x.univ}}
+          contact: {{x.email}}
+        </p>
+        <p>
+          starts: {{x.start}}
+          ends: {{x.end}}
+          minimum GPA: {{x.gpa}}
+
+          {{x.desc}}
+        </p>
 
       </div>
     </div>

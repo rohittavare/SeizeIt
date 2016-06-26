@@ -3,13 +3,13 @@ angular.module("dashboard", []).controller('ctrl', function($scope) {
   $scope.dept = "";
   $scope.university = "";
   $scope.key = "";
+  $scope.em = "";
 
   $('.datepicker').pickadate({
       selectMonths: true, // Creates a dropdown to control month
       selectYears: 15 // Creates a dropdown of 15 years to control year
   });
 
-  var currentUser = firebase.auth().currentUser;
 
   $scope.logout = function() {
       firebase.auth().signOut();
@@ -31,28 +31,35 @@ angular.module("dashboard", []).controller('ctrl', function($scope) {
       gpa: $scope.gpaMin,
       desc: $scope.desc,
       dept: $scope.dept,
-      univ: $scope.univ
+      univ: $scope.univ,
+      email: $scope.em
     }
 
     firebase.database().ref("Projects").push(obj);
-    firebase.database().ref("users/" + $scope.key + "/projects").push(obj);
-
+    $scope.pName = "";
+    $scope.start = "";
+    $scope.end = "";
+    $scope.gpaMin = "";
+    $scope.desc = "";
   }
 
 
   $(document).ready(function() {
+
+    var em = localStorage.getItem('email');
+    console.log(em);
     var opp = [];
     var name = "";
     var gpa = 0;
 
-    firebase.database().ref("users").once('value').on(function (snapshot) {
+    firebase.database().ref("users").once('value').then(function (snapshot) {
       snapshot.forEach(function(x) {
-        if(x.val().email == currentUser.email) {
+        if(x.val().email == em) {
           name = x.val().name;
           $scope.name = name;
           $scope.dept = x.val().dept;
           $scope.univ = x.val().univ;
-          $scope.key = x.key();
+          $scope.em = em;
         }
       });
     });
