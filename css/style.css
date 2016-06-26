@@ -1,9 +1,24 @@
 #nav {
   background: transparent;
-
+  box-shadow: none;
 }
 
 html {
-  background-image: url("banner2.png");
-  background-size: cover cover;
+  background-image: url("banner3.png");
+  background-size: auto 150vh;
+}
+
+.button {
+  background-color: transparent;
+  border: 1px white solid;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.fillh {
+  width: 100vw;
+}
+
+.center {
+  margin: auto
 }
