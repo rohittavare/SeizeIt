@@ -30,6 +30,10 @@
   <div class="row">
     <div class="col s12 m8 l8 offset-m2 offset-l2">
       <h1>Dashboard</h1>
+      <p class="white-text">
+        Field of study
+      </p>
+      <input type="text" class="button" name="Field of study" value="" ng-model="department">
       <br>
       <a href="#" class="button" ng-click="compile()">compile internships</a>
       <div ng-repeat="x in opportunities" class="card" ng-click="email(x)">
