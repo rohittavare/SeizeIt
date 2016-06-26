@@ -34,16 +34,12 @@ window.onload = function() {
                 }, function(error) {
                     alert("An error has occoured.");
                 });
-        
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                console.log("pushed");
-            } else {
-                // No user is signed in.
-            }
-        });
+              } else {
 
-    })
+              }
+        }
+
+    });
 
 }
 
