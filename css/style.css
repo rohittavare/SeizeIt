@@ -14,6 +14,7 @@ html {
   padding: 10px;
   border-radius: 3px;
   color: white;
+  box-shadow: none;
 }
 
 .button:hover {
@@ -71,4 +72,13 @@ h1 {
 
    .tab {
      color: white;
+   }
+
+
+   .picker__date-display {
+     background-color: rgb(216, 98, 84);
+   }
+
+   .picker__weekday-display {
+     background-color: rgb(209, 71, 59);
    }

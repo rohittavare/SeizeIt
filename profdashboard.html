@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="dashboard">
+  <head>
+    <meta charset="utf-8">
+    <title>Sieze It - Professor Dashboard</title>
+    <link rel="icon" href="images/favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="js/index.js" charset="utf-8"></script>
+    <script src="js/profdash.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body ng-controller="ctrl" ng-init="projects = []; ">
+    <nav id="nav">
+    <div class="nav-wrapper container" >
+      <a href="#" class="brand-logo">Seize It</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Sign Out</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col s12 m8 l8 offset-m2 offset-l2">
+      <h1>Dashboard</h1>
+      <div class="col s12">
+        <ul class="tabs wire">
+          <li class="tab"><a href="#projs" class="white-text">Projects</a></li>
+          <li class="tab"><a href="#new" class="white-text">New Project</a></li>
+
+        </ul>
+      </div>
+      <div id="projs" class="">
+        <div class="">
+
+        </div>
+      </div>
+      <div id="new" class="">
+        <br>
+        <br>
+        <br>
+        <div class="input-field">
+          <input ng-model="pName" id="proj_name" type="text">
+          <label for="proj_name">Project Name</label>
+        </div>
+        <div class="input-field">
+          <label for="start_date">Start Date</label>
+          <input ng-model="start" id="start_date" type="text" class="datepicker picker__input" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="start_date_root">
+        </div>
+        <div class="input-field">
+          <label for="end_date">End Date</label>
+          <input ng-model="end" id="end_date" type="text" class="datepicker picker__input" readonly="" tabindex="-1" aria-haspopup="true" aria-expanded="false" aria-readonly="false" aria-owns="end_date_root">
+        </div>
+        <div class="input-field">
+          <input ng-model="gpaMin" id="gpa_req" type="text">
+          <label for="gpa_req">GPA Requirement</label>
+        </div>
+        <div class="input-field">
+          <textarea ng-model="desc" id="description" class="materialize-textarea"></textarea>
+          <label for="description">Description of job</label>
+        </div>
+        <a href="#" id="addProj" class="button center">Post</a>
+      </div>
+
+
+    </div>
+  </div>
+  </body>
+</html>
