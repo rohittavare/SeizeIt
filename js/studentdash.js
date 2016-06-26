@@ -23,7 +23,12 @@ angular.module("dashboard", []).controller('ctrl', function($scope) {
 
     firebase.database().ref("users").once('value').then(function (snapshot) {
       snapshot.forEach(function(x) {
+
         if(x.val().email == $scope.em) {
+          console.log(x.val().type);
+          if(x.val().type == "prof") {
+          window.location = "index.html"
+        }
           $scope.name = x.val().name;
           $scope.gpa = parseInt(x.val().gpa);
         }

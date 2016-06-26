@@ -54,7 +54,11 @@ angular.module("dashboard", []).controller('ctrl', function($scope) {
 
     firebase.database().ref("users").once('value').then(function (snapshot) {
       snapshot.forEach(function(x) {
+        
         if(x.val().email == em) {
+          if(x.val().type == "student") {
+          window.location = "index.html"
+        }
           name = x.val().name;
           $scope.name = name;
           $scope.dept = x.val().dept;
