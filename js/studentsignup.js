@@ -38,15 +38,8 @@ window.onload = function() {
                 }, function(error) {
                     alert("An error has occoured.");
                 });
-<<<<<<< HEAD
             }
         });
-=======
-              } else {
-
-              }
-        }
->>>>>>> 1aca0da9f364d514845f00b7e503f1602b07fe3f
 
     });
 
@@ -61,53 +54,5 @@ function passwordGen() {
     }
     return password;
 
-<<<<<<< HEAD
-}
-=======
 }
 
-
-
-
-//
-// var btn = document.getElementById("createAcc");
-//
-// btn.addEventListener('click',function () {
-//
-//     var name = document.getElementById("name"),
-//         age = document.getElementById("age"),
-//         gpa = document.getElementById("gpa"),
-//         email = document.getElementById("email");
-//
-//     firebase.auth().createUserWithEmailAndPassword(email.value, passwordGen()).catch(function(error) {
-//
-//         var errorCode = error.code;
-//         var errorMessage = error.message;
-//
-//         console.log("Error: " + errorCode + " message: " + errorMessage);
-//         alert("An error has occurred.")
-//
-//     });
-//
-//     firebase.auth().onAuthStateChanged(function (user) {
-//         if(user){
-//             firebase.auth().sendPasswordResetEmail(user.email).then(function() {
-//                 // Email sent.
-//                 firebase.database().ref().push({
-//                     name: name.value,
-//                     age: age.value,
-//                     gpa: gpa.value,
-//                     email: email.value,
-//                     type: "student"
-//                 });
-//                 firebase.auth().signOut();
-//                 alert("Please check your email.");
-//                 window.location = "loginStudent.html";
-//             }, function(error) {
-//                 alert("An error has occoured.");
-//             });
-//         }
-//     });
-//
-// })
->>>>>>> 1aca0da9f364d514845f00b7e503f1602b07fe3f
