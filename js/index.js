@@ -9,7 +9,11 @@ var config = {
 };
 firebase.initializeApp(config);
 
+
+
 window.onload = function() {
+  $(".button-collapse").sideNav();
+
     document.getElementById("signOut").addEventListener('click',function () {
         if(firebase.auth().currentUser){
             firebase.auth().signOut();

@@ -36,17 +36,17 @@
       <input type="text" class="button" name="Field of study" value="" ng-model="department">
       <br>
       <a href="#" class="button" ng-click="compile()">compile internships</a>
-      <div ng-repeat="x in opportunities" class="card" ng-click="email(x)">
+      <div ng-repeat="x in opportunities" class="card opp-card" ng-click="email(x)">
         <h4>{{x.projName}}</h4>
         <p>
-          {{x.prof}}, {{x.dept}} {{x.univ}}
-          contact: {{x.email}}
+          <b>{{x.prof}}, {{x.dept}} {{x.univ}}
+          contact: {{x.email}}</b><br>
         </p>
         <p>
           starts: {{x.start}}
-          ends: {{x.end}}
+          ends: {{x.end}}<br>
           minimum GPA: {{x.gpa}}
-
+          <br>
           {{x.desc}}
         </p>
 

@@ -82,3 +82,7 @@ h1 {
    .picker__weekday-display {
      background-color: rgb(209, 71, 59);
    }
+
+   .opp-card {
+     padding: 20px;
+   }
