@@ -1,20 +1,45 @@
-var config = {
-    apiKey: "AIzaSyCG36qDp3oC2H3BpqpPBMuLgrxGlKvpvWI",
-    authDomain: "seizeit-cdb9a.firebaseapp.com",
-    databaseURL: "https://seizeit-cdb9a.firebaseio.com",
-    storageBucket: "seizeit-cdb9a.appspot.com",
+function handleAuthChanges(){
+
+    firebase.auth().onAuthStateChanged(function (user) {
+        if(user){
+            //TODO angular implementation to get database user data
+            window.location = "google.com";
+        }else{
+            //TODO sign out
+        }
+    });
+
+}
+
+window.onload = function() {
+    handleAuthChanges();
+
+    var signIn = document.getElementById('loginButton');
+    signIn.addEventListener('click',function () {
+        if(firebase.auth().currentUser){
+            firebase.auth().signOut();
+        }else {
+
+            var email = document.getElementById("student-email"),
+                password = document.getElementById("student-pass");
+
+            if(password.length<4){
+                alert("Invalid email or password");
+            }else {
+
+                firebase.auth().signInWithEmailAndPassword(email.value, password.value).catch(function (error) {
+
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+
+                    alert("Invalid email or password");
+                    email.value = "";
+                    password.value = "";
+                });
+
+            }
+
+        }
+    });
+
 };
-firebase.initializeApp(config);
-
-var firebaseAuth = firebase.auth();
-
-firebaseAuth.signInWithEmailAndPassword($("#student-email").value, $("#student-pass").value).catch(function(error) {
-
-        var errorCode = error.code;
-        var errorMessage = error.message;
-
-        alert("Invalid email or password");
-        $("#student-email").value = "";
-        $("#student-pass").value = "";
-    }
-);
