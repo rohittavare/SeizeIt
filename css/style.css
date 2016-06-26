@@ -60,3 +60,15 @@ h1 {
    .input-field .prefix.active {
      color: #fff;
    }
+
+
+   .wire {
+     background: transparent;
+     border-top: 1px white solid;
+     border-bottom: 1px white solid;
+     color: white;
+   }
+
+   .tab {
+     color: white;
+   }
