@@ -1,47 +1,38 @@
 window.onload = function() {
-    document.getElementById("createAcc").addEventListener('click',function () {
+
+    var btn = document.getElementById("createAcc");
+
+    btn.addEventListener('click',function () {
 
         var name = document.getElementById("name"),
             age = document.getElementById("age"),
             gpa = document.getElementById("gpa"),
             email = document.getElementById("email");
 
-        firebase.auth().createUserWithEmailAndPassword(email.value,passwordGen()).catch(function (error) {
+        firebase.auth().createUserWithEmailAndPassword(email.value, passwordGen()).catch(function(error) {
 
-            alert("A problem has occurred. Please try again later with creating the acc");
-            name.value = "";
-            age.value = "";
-            gpa.value = "";
-            email.value = "";
-            return;
+            var errorCode = error.code;
+            var errorMessage = error.message;
+
+            console.log("Error: " + errorCode + " message: " + errorMessage);
+            alert("An error has occurred.")
 
         });
 
-
-        firebase.auth().sendPasswordResetEmail(email.value).then(function() {
-            firebase.database().ref('users/'+email.value).set({
-
-                name: name.value,
-                age: age.value,
-                gpa: gpa.value,
-                email: email.value
-
-            });
-            //TODO add location to signup page.
-            //window.location()
-            alert("Check your emails!!!")
-        }, function(error) {
-            //TODO add console.log to the errors
-            alert("A problem has occurred. Please try again later with firebase");
-            name.value = "";
-            age.value = "";
-            gpa.value = "";
-            email.value = "";
+        firebase.auth().onAuthStateChanged(function (user) {
+            if(user){
+                firebase.auth().sendPasswordResetEmail(user.email).then(function() {
+                    // Email sent.
+                    firebase.database().ref(users)
+                    firebase.auth().signOut();
+                    alert("Please check your email.");
+                }, function(error) {
+                    alert("An error has occoured.");
+                });
+            }
         });
 
-    }
-
-    );
+    })
 
 }
 
