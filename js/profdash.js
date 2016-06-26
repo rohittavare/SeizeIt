@@ -14,7 +14,7 @@ angular.module("dashboard", []).controller('ctrl', function($scope) {
   firebase.auth().onAuthStateChanged(function (user) {
     if(user){
     } else {
-      window.location = "loginStudent.html";
+      window.location = "loginProfessor.html";
     }
   });
 
