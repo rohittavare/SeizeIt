@@ -15,10 +15,24 @@ window.onload = function() {
             // ...
         });
 
-        database.ref('Students').push({
-                    Name: name,
-                    Age: age,
-                    GPA: gpa
+        firebase.auth().onAuthStateChanged(function (user) {
+            if(user){
+              var data = {
+                name: name.value,
+                age: age.value,
+                gpa: gpa.value,
+                email: email.value,
+                type: "student"
+              }
+              firebase.database().ref("users").push(data);
+                firebase.auth().sendPasswordResetEmail(user.email).then(function() {
+                    // Email sent.
+
+                    firebase.auth().signOut();
+                    alert("Please check your email.");
+                    window.location = "loginStudent.html";
+                }, function(error) {
+                    alert("An error has occoured.");
                 });
         
         firebase.auth().onAuthStateChanged(function(user) {

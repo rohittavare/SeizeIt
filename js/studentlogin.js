@@ -22,6 +22,7 @@ window.onload = function() {
 
             var email = document.getElementById("student-email"),
                 password = document.getElementById("student-pass");
+                localStorage.setItem("email", email.value);
 
             if(password.length<4){
                 alert("Invalid email or password");

@@ -32,6 +32,7 @@ window.onload = function() {
                 firebase.auth().sendPasswordResetEmail(user.email).then(function() {
                     //Email sent.
                     firebase.auth().signOut();
+
                     alert("Please check your email.");
                     window.location = "loginProfessor.html";
                 }, function(error) {

@@ -3,6 +3,7 @@ function handleAuthChanges(){
     firebase.auth().onAuthStateChanged(function (user) {
         if(user){
             //TODO angular implementation to get database user data
+
             window.location = "profdashboard.html";
         }else{
             //TODO sign out
@@ -22,6 +23,7 @@ window.onload = function() {
 
             var email = document.getElementById("prof-email"),
                 password = document.getElementById("prof-pass");
+                localStorage.setItem("email", email.value);
 
             //if(password.length<4){
                 //alert("Invalid email or password");
