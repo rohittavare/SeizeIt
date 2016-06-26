@@ -16,6 +16,11 @@ html {
   color: white;
 }
 
+.button:hover {
+  background-color: white;
+  color: rgb(216, 98, 84);
+}
+
 .fillh {
   width: 100vw;
 }
