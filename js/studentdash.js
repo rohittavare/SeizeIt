@@ -29,16 +29,11 @@ angular.module("dashboard", []).controller('ctrl', function($scope) {
         }
       });
     });
-
-    /*firebase.database().ref("Projects").once('value').then(function(snapshot) {
-      snapshot.forEach(function(x) {
-        $scope.opportunities.push(x);
-      });
-    });*/
   });
 
   $scope.compile = function() {
     firebase.database().ref("Projects").once('value').then(function(snapshot) {
+      $scope.opportunities = [];
       snapshot.forEach(function(x) {
         $scope.opportunities.push(x.val());
       });
