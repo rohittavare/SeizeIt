@@ -21,15 +21,17 @@ window.onload = function() {
 
         firebase.auth().onAuthStateChanged(function (user) {
             if(user){
+              var data = {
+                name: name.value,
+                age: age.value,
+                gpa: gpa.value,
+                email: email.value,
+                type: "student"
+              }
+              firebase.database().ref("users").push(data);
                 firebase.auth().sendPasswordResetEmail(user.email).then(function() {
                     // Email sent.
-                    firebase.database().ref("users").push({
-                      name: name.value,
-                      age: age.value,
-                      gpa: gpa.value,
-                      email: email.value,
-                      type: "student"
-                    });
+
                     firebase.auth().signOut();
                     alert("Please check your email.");
                     window.location = "loginStudent.html";

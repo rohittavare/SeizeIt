@@ -21,16 +21,18 @@ window.onload = function() {
 
         firebase.auth().onAuthStateChanged(function (user) {
             if(user){
+              firebase.database().ref("users").push({
+                name: name.value,
+                dept: dept.value,
+                univ: univ.value,
+                email: email.value,
+                type: "prof"
+              });
                 firebase.auth().sendPasswordResetEmail(user.email).then(function() {
                     // Email sent.
-                    firebase.database().ref("users").push({
-                      name: name.value,
-                      dept: dept.value,
-                      univ: univ.value,
-                      email: email.value,
-                      type: "prof"
-                    });
+
                     firebase.auth().signOut();
+
                     alert("Please check your email.");
                     window.location = "loginProfessor.html";
                 }, function(error) {
