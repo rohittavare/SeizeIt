@@ -3,7 +3,7 @@ function handleAuthChanges(){
     firebase.auth().onAuthStateChanged(function (user) {
         if(user){
             //TODO angular implementation to get database user data
-            window.location = "google.com";
+            window.location = "studentdashboard.html";
         }else{
             //TODO sign out
         }

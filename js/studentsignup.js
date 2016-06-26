@@ -23,9 +23,16 @@ window.onload = function() {
             if(user){
                 firebase.auth().sendPasswordResetEmail(user.email).then(function() {
                     // Email sent.
-                    firebase.database().ref(users)
+                    firebase.database().ref("users").push({
+                      name: name.value,
+                      age: age.value,
+                      gpa: gpa.value,
+                      email: email.value,
+                      type: "student"
+                    });
                     firebase.auth().signOut();
                     alert("Please check your email.");
+                    window.location = "loginStudent.html";
                 }, function(error) {
                     alert("An error has occoured.");
                 });
