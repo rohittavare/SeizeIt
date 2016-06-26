@@ -22,7 +22,7 @@ window.onload = function() {
 
         firebase.auth().onAuthStateChanged(function (user) {
             if(user){
-                firebase.database().ref('prof').push({
+                firebase.database().ref('users').push({
                     name: name.value,
                     dept: dept.value,
                     univ: univ.value,
