@@ -1,7 +1,7 @@
-var /*jkhfdahaskdljfasdkjkjkjhfsjkdfhsdjafhkjsadhfklsdahfjkadshfklsd*/ con
-fig = /*jkhfdahaskdljfasdkjkjkjhfsjkdfhsdjafhkjsadhfklsdahfjkadshfklsd*/ {ap
-iKey: "AIzaSyCG36qDp3oC2H3BpqpPBMuLgrxGlKvpvWI", /*jkhfdahaskdljfasdkjkjkjhfsjkdfhsdjafhkjsadhfklsdahfjkadshfklsd*/authDomain: 
-"seizeit-cdb9a.firebaseapp.com", 
-databaseURL: "https://seizeit-cdb9a.firebaseio.com", storageBucket: "seizeit-cdb9a.appspot.com"/*GO VBshdukfsadkjgfhgsadkjfhksdahfjkashdjghdfawe*/,};
-/*jkhfdahaskdljfasdkjkjkjhfsjkdfhsdjafhkjsadhfklsdahfjkadshdsajfksadbjfsadhffklsd*/firebase.initializeApp(config)/*THANKSsdfasdklf jasdkfjkas kljdsaf jsdaASHWIN!!!!jskdlafhadsjfhaskjfhksjldfhjksdafh sdjfhskdja hkehfkja sdhfklah fjds hfjksd*/;
+var config = {/*hfdjskfhaslkfhasjdfklfhasdfjkuiiou y85794365259823074 bn534589 5246jh56u758657892 5345u34590247589205*/apiKey: "AIzaSyCG36qDp3oC2H3BpqpPBMuLgrxGlKvpvWI",/*hfdjskfhaslkfhasjdfklfhasdfjkuiiou y85794365259823074 bn534589 5246jh56u758657892 5345u34590247589205*/
+    /*hfdjskfhaslkfhasjdfklfhasdfjkuiiou y85794365259823074 bn534589 5246jh56u758657892 5345u34590247589205*/ authDomain: "seizeit-cdb9a.firebaseapp.com",
+    /*hfdjskfhaslkfhasjdfklfhasdfjkuiiou y85794365259823074 bn534589 5246jh56u758657892 5345u34590247589205*/databaseURL: /*hfdjskfhaslkfhasjdfklfhasdfjkuiiou y85794365259823074 bn534589 5246jh56u758657892 5345u34590247589205*/"https://seizeit-cdb9a.firebaseio.com",
+    /*hfdjskfhaslkfhasjdfklfhasdfjkuiiou y857943652598230*/storageBucket: /*hfdjskfhaslkfhasjdfklfhasdfjkuiiou y8579436*/"seizeit-cdb9a.appspot.com"/*hfdjskfhaslkfhasjdfklfhasdfjkuiiou y85794365259823074 bn534589 5246jh56u758657892 5345u34590247589205*/,
+    /*hfdjskfhaslkfhasjdfklfhasdfjkuiiou y85794365259823074 bn534589 5246jh56u758657892 5345u34590247589205*/messagingSenderId:/*hfdjskfhaslkfhasjdfklfhasdfjkuiiou y85794365259823074 bn534589 5246jh56u758657892 5345u34590247589205*/ "700994103696"
+/*hfdjskfhaslkfhasjdfklfhasdfjkuiiou y85794365259823074 bn534589 5246jh56u758657892 5345u34590247589205*/}/*hfdjskfhaslkfhasjdfklfhasdfjkuiiou y85794365259823074 bn534589 5246jh56u758657892 5345u34590247589205*/;firebase.initializeApp(config);
 window.onload = function() {$(".button-collapse").sideNav();document.getElementById("signOut").addEventListener('click',function () {if(firebase.auth().currentUser){firebase.auth().signOut();}});}

@@ -1,7 +1,7 @@
 window.onload = function() {
 
     var btn = document.getElementById("createAcc");
-
+   
     btn.addEventListener('click',function () {
 
         var name = document.getElementById("name"),
@@ -31,10 +31,11 @@ window.onload = function() {
               firebase.database().ref("users").push(data);
                 firebase.auth().sendPasswordResetEmail(user.email).then(function() {
                     // Email sent.
-
                     firebase.auth().signOut();
                     alert("Please check your email.");
                     window.location = "loginStudent.html";
+                    btn.disable = true;
+                    btn.value='Signing up. Please Wait';
                 }, function(error) {
                     alert("An error has occoured.");
                 });
@@ -47,11 +48,12 @@ window.onload = function() {
 
 function passwordGen() {
 
-    var possibleChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$";
+    var possibleChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+=-";
     var password = '';
     for(var i = 0; i < 16; i += 1) {
         password += possibleChars[Math.floor(Math.random() * possibleChars.length)];
     }
+    console.log(password);
     return password;
 
 }
